@@ -54,13 +54,13 @@ const initialFormErrors = {
 }
 
 
-const initialOrder = []
+const initialOrders = []
 const initialDisabled = true
 
 
   export default function App() {
 
-    const [order, setOrder] = useState(initialOrder)          
+    const [orders, setOrders] = useState(initialOrders)          
     const [formValues, setFormValues] = useState(initialFormValues) 
     const [formErrors, setFormErrors] = useState(initialFormErrors) 
     const [disabled, setDisabled] = useState(initialDisabled)       
@@ -68,14 +68,14 @@ const initialDisabled = true
     const getOrders = () => {
       axios.get('`https://reqres.in/api/orders`')
         .then(res => {
-          setOrder(res.data);
+          setOrders(res.data);
         }).catch(err => console.error(err))
     }
   
     const postNewOrder = newOrder => {
       axios.post('`https://reqres.in/api/orders`', newOrder)
         .then(res => {
-            setOrder([res.data, ...order]);
+            setOrders([res.data, ...orders]);
         }).catch(err => console.error(err));
   
       setFormValues(initialFormValues);
@@ -102,12 +102,20 @@ const initialDisabled = true
         name: formValues.name.trim(),
         size: formValues.size,
         sauce: formValues.role,
-        civil: formValues.civil.trim(),
-        hobbies: ['hiking', 'reading', 'coding'].filter(hobby => !!formValues[hobby])
+        pepperoni: formValues.pepperoni.check(''),
+        //hobbies: ['hiking', 'reading', 'coding'].filter(hobby => !!formValues[hobby])
       }
   
       postNewOrder(newOrder);
     }
+
+    // useEffect(() => {
+    //   getOrders()
+    // }, [])
+  
+    // useEffect(() => {
+    //   schema.isValid(formValues).then(valid => setDisabled(!valid))
+    // }, [formValues])
     
   return (
     <div className='App'>
@@ -128,7 +136,7 @@ const initialDisabled = true
 
 
       <Switch>
-        <Route exact path="/">
+        <Route path="/">
           <Home />
         </Route>
       </Switch>

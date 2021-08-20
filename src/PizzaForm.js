@@ -56,7 +56,7 @@ export default function PizzaForm(props) {
 
        {/*////1st Text Input//////*/}
         <label>Name&nbsp;
-          <input
+          <input className="name-input"
             value={values.name}
             onChange={onChange}
             name='name'
@@ -65,11 +65,11 @@ export default function PizzaForm(props) {
         </label>
       
         {/* ////////// DROPDOWNS ////////// */}
-    <div className='form-group dropdowns'>
+    <div className="dropdowns">
           <h4>Size and Sauce</h4>
 
-        <label>Size
-          <select
+        <label>Pizza Size
+          <select id="size-dropdown"
             onChange={onChange}
             value={values.size}
             name='size'
@@ -95,7 +95,7 @@ export default function PizzaForm(props) {
             <option value='spinachAlfredo'>Spinach Alfredo</option>
           </select>
         </label>
-    </div>
+        </div>
 
         {/* ////////// CHECKBOXES ////////// */}
     <div className='form-group checkboxes'>
@@ -230,7 +230,7 @@ export default function PizzaForm(props) {
 
         {/* ////////// TEXT INPUTS ////////// */}
         <label>Special Instructions&nbsp;
-          <input
+          <input id="special-text"
             value={values.specialInstructions}
             onChange={onChange}
             name='specialInstructions'
