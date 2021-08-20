@@ -29,6 +29,7 @@ export default function PizzaForm(props) {
         <button disabled={disabled}>submit</button>
 
         <div className='errors'>
+          <div>{errors.name}</div>
           <div>{errors.size}</div>
           <div>{errors.sauce}</div>
           <div>{errors.pepperoni}</div>
@@ -52,6 +53,16 @@ export default function PizzaForm(props) {
 
   <div className='pizza-order inputs'>
         <h4>Begin You Order Here</h4>
+
+       {/*////1st Text Input//////*/}
+        <label>Name&nbsp;
+          <input
+            value={values.name}
+            onChange={onChange}
+            name='name'
+            type='text'
+          />
+        </label>
       
         {/* ////////// DROPDOWNS ////////// */}
     <div className='form-group dropdowns'>

@@ -13,7 +13,7 @@ export default function Home() {
     <div className='home-wrapper'>
       <img
         className='home-image'
-        src='https://source.unsplash.com/F6-U5fGAOik'
+        src='https://unsplash.com/photos/xBXF9pr6LQo'
         alt=''
       />
       <button

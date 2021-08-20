@@ -6,7 +6,8 @@ import Home from './Home';
 import PizzaForm from './PizzaForm';
 
 const initialFormValues = {
- 
+  ////Text Input/////
+  name: '',
   ///// DROPDOWN /////
   size: '',
   ///// Dropdown /////
@@ -31,6 +32,7 @@ const initialFormValues = {
   
 }
 const initialFormErrors = {
+  name: '',
   size: '',
   sauce: '',
   pepperoni: false,
@@ -51,7 +53,7 @@ const initialFormErrors = {
 }
 
 
-//const initialFriends = []
+//const initialOrder = []
 const initialDisabled = true
 
   
